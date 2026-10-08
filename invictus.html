@@ -177,7 +177,7 @@
                 <i class="ph-fill ph-infinity text-6xl text-astral-cyan mb-6 animate-pulse"></i>
                 <h2 class="font-display text-3xl font-bold mb-4 text-white">INVICTUS AUDIO</h2>
                 <p class="text-sm text-gray-400 mb-8 leading-relaxed font-mono">
-                    Enter the 432 Hz relaxing music player and begin with Invictus I. Use the transport controls to play, pause, or move forward through the eight compositions while the quantum visual field responds to every frequency.
+                    Enter the 432 Hz relaxing music player and begin with Invictus I. Use the transport controls to play, pause, or move forward through the seven available compositions while the quantum visual field responds to every frequency.
                 </p>
                 <button id="btn-enter-player" type="button" class="upload-btn cursor-pointer px-10 py-5 rounded-full font-display font-bold uppercase tracking-widest text-sm inline-flex items-center gap-3 text-white shadow-lg" aria-label="Enter player" title="Enter player">
                     <i class="ph-bold ph-play-circle text-xl"></i>
@@ -234,7 +234,9 @@
     <!-- MAGIC LOGIC (THREE.JS + WEB AUDIO API) -->
     <script>
         // --- AUDIO VARIABLES ---
-        const AUDIO_BASE_URL = 'https://media.githubusercontent.com/media/ApoloSolInvictus/infiniti-ia/main/audio/';
+        // GitHub LFS media endpoint: it serves the real MP3 objects instead of the
+        // small pointer files returned by the normal repository URL.
+        const AUDIO_BASE_URL = 'https://media.githubusercontent.com/media/ApoloSolInvictus/curatiapp/main/audio/';
         const TRACKS = [
             { name: 'Invictus I', src: `${AUDIO_BASE_URL}Invictus%20I.mp3` },
             { name: 'Invictus II', src: `${AUDIO_BASE_URL}Invictus%20II.mp3` },
@@ -242,8 +244,7 @@
             { name: 'Invictus IV', src: `${AUDIO_BASE_URL}Invictus%20IV.mp3` },
             { name: 'Invictus V', src: `${AUDIO_BASE_URL}Invictus%20V.mp3` },
             { name: 'Invictus VI', src: `${AUDIO_BASE_URL}Invictus%20VI.mp3` },
-            { name: 'Invictus VII', src: `${AUDIO_BASE_URL}Invictus%20VII.mp3` },
-            { name: 'Invictus VIII', src: `${AUDIO_BASE_URL}Invictus%20VIII.mp3` }
+            { name: 'Invictus VII', src: `${AUDIO_BASE_URL}Invictus%20VII.mp3` }
         ];
         let audioContext, analyser, source, audio;
         let dataArray, bufferLength;
